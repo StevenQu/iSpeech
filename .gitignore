@@ -1,0 +1,27 @@
+# Python virtual environment
+venv/
+.env/
+env/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Whisper models cache
+.cache/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Logs
+*.log 

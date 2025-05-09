@@ -1,0 +1,28 @@
+{
+  "rules": [
+    {
+      "name": "Virtual Environment",
+      "description": "Always run commands in the virtual environment unless explicitly told not to do so",
+      "type": "command",
+      "pattern": "^python|^pip",
+      "action": "prepend",
+      "value": "source venv/bin/activate && "
+    },
+    {
+      "name": "Package Installation",
+      "description": "When installing missing modules, add to requirements.txt and install via requirements file",
+      "type": "command",
+      "pattern": "^pip install",
+      "action": "transform",
+      "value": "echo \"$1\" >> requirements.txt && python -m pip install -r requirements.txt"
+    },
+    {
+      "name": "Run Speech-to-Text",
+      "description": "Always run speech_to_text.py with the virtual environment activated",
+      "type": "command",
+      "pattern": "^run$|^run speech$|^speech$",
+      "action": "replace",
+      "value": "source venv/bin/activate && python speech_to_text.py"
+    }
+  ]
+} 
