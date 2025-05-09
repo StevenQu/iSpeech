@@ -2,20 +2,49 @@
 
 Simple Python backend application that converts speech from your microphone to text using the faster-whisper library (a faster implementation of OpenAI's Whisper model).
 
-## Setup
+## Setup for macOS
 
-1. Create and activate a virtual environment:
+### Prerequisites Installation
+
+If you don't have Python installed yet:
+
+1. Install Homebrew (macOS package manager):
    ```
-   python -m venv venv
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+2. Install Python using Homebrew:
+   ```
+   brew install python
+   ```
+
+3. Verify Python installation:
+   ```
+   python3 --version
+   ```
+
+### Application Setup
+
+1. Clone this repository:
+   ```
+   git clone https://github.com/StevenQu/iSpeech.git
+   cd iSpeech
+   ```
+
+2. Create and activate a virtual environment (recommended):
+   ```
+   python3 -m venv venv
    source venv/bin/activate
    ```
+   
+   > **Important**: Always use a virtual environment to avoid conflicts with system packages. Your terminal prompt should change to indicate the virtual environment is active.
 
-2. Install the required dependencies:
+3. Install the required dependencies:
    ```
    python -m pip install -r requirements.txt
    ```
 
-3. Run the script:
+4. Run the script:
    ```
    python speech_to_text.py
    ```
@@ -25,9 +54,14 @@ Simple Python backend application that converts speech from your microphone to t
    run
    ```
 
-4. Start speaking into your microphone when you see "Listening... Speak now". The recording will automatically stop after you finish speaking (when it detects silence).
+5. Start speaking into your microphone when you see "Listening... Speak now". The recording will automatically stop after you finish speaking (when it detects silence).
 
-5. Press Ctrl+C to exit the program.
+6. Press Ctrl+C to exit the program.
+
+7. To deactivate the virtual environment when finished:
+   ```
+   deactivate
+   ```
 
 ## Cursor Rules
 
